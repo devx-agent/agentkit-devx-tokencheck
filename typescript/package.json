@@ -1,6 +1,6 @@
 {
   "name": "agentkit-devx-tokencheck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Coinbase AgentKit action provider: DevX Token Check rug/honeypot verdict (safe/caution/danger) before swaps, plus a pre-swap guard. $0.01 USDC per check via x402 from the agent's wallet; free demo tokens. By Made by DevX.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
