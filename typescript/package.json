@@ -1,0 +1,58 @@
+{
+  "name": "agentkit-devx-tokencheck",
+  "version": "0.1.0",
+  "description": "Coinbase AgentKit action provider: DevX Token Check rug/honeypot verdict (safe/caution/danger) before swaps, plus a pre-swap guard. $0.01 USDC per check via x402 from the agent's wallet; free demo tokens. By Made by DevX.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "tsc -p .",
+    "pretest": "tsc -p .",
+    "test": "vitest run",
+    "test:offline": "LIVE=0 vitest run"
+  },
+  "keywords": [
+    "agentkit",
+    "coinbase-agentkit",
+    "action-provider",
+    "x402",
+    "token",
+    "rug-check",
+    "honeypot",
+    "base",
+    "defi",
+    "trading",
+    "agent"
+  ],
+  "author": "Made by DevX <madebydevx@gmail.com> (https://madebydevx.com)",
+  "license": "MIT",
+  "homepage": "https://tokencheck.madebydevx.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devx-agent/agentkit-devx-tokencheck.git",
+    "directory": "typescript"
+  },
+  "dependencies": {
+    "@x402/evm": "^2.28.0",
+    "@x402/fetch": "^2.28.0",
+    "viem": "^2.57.10"
+  },
+  "peerDependencies": {
+    "@coinbase/agentkit": ">=0.10.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "reflect-metadata": "^0.2.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9",
+    "@coinbase/agentkit": "^0.10.4",
+    "zod": "^3.25.76"
+  }
+}

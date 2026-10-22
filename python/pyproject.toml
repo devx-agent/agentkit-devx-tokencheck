@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devx-tokencheck-agentkit"
+version = "0.1.0"
+description = "Coinbase AgentKit action provider: DevX Token Check rug/honeypot verdict before swaps. $0.01 USDC per check via x402 from the agent wallet; free demo tokens. By Made by DevX."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Made by DevX", email = "madebydevx@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = ["coinbase-agentkit>=0.6", "requests>=2.31"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://tokencheck.madebydevx.com"
+Source = "https://github.com/devx-agent/agentkit-devx-tokencheck"
+
+[tool.setuptools]
+packages = ["devx_tokencheck_agentkit"]

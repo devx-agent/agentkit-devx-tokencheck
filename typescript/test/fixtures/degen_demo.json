@@ -1,0 +1,362 @@
+{
+  "operation_id": null,
+  "status": "demo",
+  "status_url": null,
+  "result": {
+    "grade": "MID",
+    "one_liner": "Some risk flags; check before buying",
+    "roast": "$DEGEN: Transfers can be paused by a privileged account.",
+    "metrics": {
+      "tokenAddress": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+      "ticker": "DEGEN",
+      "tokenName": "Degen",
+      "fetchedAt": "2026-10-22T17:26:18.600Z",
+      "metrics": [
+        {
+          "key": "liquidity_usd",
+          "label": "Liquidity",
+          "availability": "available",
+          "value": "517890",
+          "unit": "USD",
+          "provenance": {
+            "source": "derived",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "price_usd",
+          "label": "Price (simulated buy)",
+          "availability": "available",
+          "value": "0.0009448",
+          "unit": "USD",
+          "provenance": {
+            "source": "derived",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "fdv_usd",
+          "label": "Fully diluted value",
+          "availability": "available",
+          "value": "33982140",
+          "unit": "USD",
+          "provenance": {
+            "source": "derived",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "pools",
+          "label": "Pools with liquidity",
+          "availability": "available",
+          "value": "21",
+          "unit": "count",
+          "provenance": {
+            "source": "onchain",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "buy_tax_pct",
+          "label": "Buy tax (simulated)",
+          "availability": "available",
+          "value": "0",
+          "unit": "%",
+          "provenance": {
+            "source": "derived",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "sell_tax_pct",
+          "label": "Sell tax (simulated)",
+          "availability": "available",
+          "value": "0",
+          "unit": "%",
+          "provenance": {
+            "source": "derived",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "owner_supply_pct",
+          "label": "Owner holding",
+          "availability": "available",
+          "value": "0.5295",
+          "unit": "%",
+          "provenance": {
+            "source": "onchain",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "creator_supply_pct",
+          "label": "Creator holding",
+          "availability": "available",
+          "value": "0",
+          "unit": "%",
+          "provenance": {
+            "source": "onchain",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "burned_supply_pct",
+          "label": "Burned supply",
+          "availability": "available",
+          "value": "0.0006",
+          "unit": "%",
+          "provenance": {
+            "source": "onchain",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "contract_age_days",
+          "label": "Contract age",
+          "availability": "available",
+          "value": "1019.08",
+          "unit": "days",
+          "provenance": {
+            "source": "onchain",
+            "observedAt": "2026-10-22T17:26:18.600Z",
+            "blockNumber": "52950315"
+          },
+          "unavailableReason": null
+        },
+        {
+          "key": "volume_24h_usd",
+          "label": "Volume 24h",
+          "availability": "unavailable",
+          "value": null,
+          "unit": "USD",
+          "provenance": null,
+          "unavailableReason": "not_reported"
+        }
+      ]
+    },
+    "generatedAt": "2026-10-22T17:26:18.600Z",
+    "fromCache": false,
+    "disclaimer": "Not financial advice.",
+    "verdict": "caution",
+    "risk_score": 12,
+    "confidence": 0.95,
+    "reasons": [
+      {
+        "severity": "medium",
+        "code": "pausable",
+        "message": "Transfers can be paused by a privileged account"
+      },
+      {
+        "severity": "info",
+        "code": "active_owner",
+        "message": "Active owner 0x704ec5c12ca20a293c2c0b72b22619a4231f3c0d (a contract, e.g. multisig/timelock)"
+      },
+      {
+        "severity": "info",
+        "code": "sim_ok",
+        "message": "Simulated buy, transfer and sell on uniswap_v3 succeeded with no token tax"
+      }
+    ],
+    "chain": "base",
+    "chain_id": 8453,
+    "token": {
+      "address": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+      "name": "Degen",
+      "symbol": "DEGEN",
+      "decimals": 18,
+      "total_supply_raw": "35967154646456859644921766718",
+      "total_supply": 35967154646.45686,
+      "price_usd": 0.0009448,
+      "fdv_usd": 33982140,
+      "known_asset": null
+    },
+    "contract": {
+      "verified_sourcify": true,
+      "sourcify_match": "exact_match",
+      "bytecode_bytes": 11608,
+      "owner": "0x704ec5c12ca20a293c2c0b72b22619a4231f3c0d",
+      "owner_is_contract": true,
+      "ownership_renounced": false,
+      "paused": false,
+      "proxy": {
+        "upgradeable": false,
+        "implementation": null,
+        "implementation_verified_sourcify": null,
+        "admin": null,
+        "admin_is_contract": null,
+        "beacon": null,
+        "minimal_proxy": false
+      }
+    },
+    "flags": {
+      "honeypot": false,
+      "mintable": false,
+      "blacklist": false,
+      "pausable": true,
+      "fee_setter": false,
+      "fee_on_transfer": false,
+      "trading_switch": false,
+      "max_tx_or_wallet": false,
+      "upgradeable": false,
+      "ownership_reclaim": false
+    },
+    "privileged_functions": {
+      "pause": [
+        "pause()",
+        "unpause()",
+        "paused()"
+      ],
+      "ownership": [
+        "owner()",
+        "transferOwnership(address)",
+        "renounceOwnership()"
+      ]
+    },
+    "honeypot": {
+      "performed": true,
+      "method": "eth_simulateV1",
+      "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa",
+      "dex": "uniswap_v3",
+      "quote": "WETH",
+      "amount_in": "10000000000000000",
+      "amount_in_human": 0.01,
+      "buy_ok": true,
+      "transfer_ok": true,
+      "sell_ok": true,
+      "buy_tax_pct": 0,
+      "transfer_tax_pct": 0,
+      "sell_tax_pct": 0,
+      "round_trip_loss_pct": 0.598,
+      "tokens_received_raw": "25209703116518178116146",
+      "buy_gas": 117952,
+      "sell_gas": 95172,
+      "failed_stage": null,
+      "revert_reason": null,
+      "second_pool": {
+        "pool": "0x0ca6485b7e9cf814a3fd09d81672b07323535b64",
+        "dex": "uniswap_v3",
+        "buy_ok": true,
+        "sell_ok": true,
+        "buy_tax_pct": 0,
+        "sell_tax_pct": 0
+      }
+    },
+    "liquidity": {
+      "total_usd": 517890,
+      "pools_found": 21,
+      "dexes_checked": [
+        "uniswap_v2",
+        "uniswap_v3",
+        "aerodrome",
+        "aerodrome_slipstream",
+        "pancakeswap_v3",
+        "sushiswap_v2"
+      ],
+      "quote_assets": [
+        "WETH",
+        "USDC"
+      ],
+      "top_pools": [
+        {
+          "address": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa",
+          "dex": "uniswap_v3",
+          "fee": 3000,
+          "quote": "WETH",
+          "liquidity_usd": 255150
+        },
+        {
+          "address": "0x0ca6485b7e9cf814a3fd09d81672b07323535b64",
+          "dex": "uniswap_v3",
+          "fee": 10000,
+          "quote": "WETH",
+          "liquidity_usd": 220166
+        },
+        {
+          "address": "0x2c4909355b0c036840819484c3a882a95659abf3",
+          "dex": "aerodrome",
+          "fee": "volatile",
+          "quote": "WETH",
+          "liquidity_usd": 27683
+        },
+        {
+          "address": "0xafb62448929664bfccb0aae22f232520e765ba88",
+          "dex": "aerodrome_slipstream",
+          "fee": "ts200",
+          "quote": "WETH",
+          "liquidity_usd": 9700
+        },
+        {
+          "address": "0x54d281c7cc029a9dd71f9acb7487dd95b1eecf5a",
+          "dex": "pancakeswap_v3",
+          "fee": 500,
+          "quote": "WETH",
+          "liquidity_usd": 2377
+        }
+      ],
+      "supply_in_pools_pct": 0.8014,
+      "method": "approx: 2 x quote-side pool balance x Chainlink price. Uniswap v4 and DEXs not listed are not covered.",
+      "top_v2_lp": null
+    },
+    "holders": {
+      "owner_pct": 0.5295,
+      "creator_pct": 0,
+      "burned_pct": 0.0006,
+      "token_contract_pct": 0.0266,
+      "in_pools_pct": 0.8014,
+      "top_holders": null,
+      "top_holders_note": "a full top-holder list needs an indexer; not included (free public sources only)"
+    },
+    "deployer": {
+      "creator": "0x3c12b77ae8b7dd1feb63d1d6a2a819acda0a41d2",
+      "creator_tx_count": 1320,
+      "created_via": null,
+      "creation_block": 8925894,
+      "creation_tx": "0xcea27f1618e28ecc59b2faed86cdec29a92218261fe9efe374a39201e93545c5",
+      "created_at": "2024-01-07T15:25:35.000Z",
+      "contract_age_days": 1019.08,
+      "source": "sourcify"
+    },
+    "checks": {
+      "bytecode_scan": true,
+      "ownership": true,
+      "proxy": true,
+      "honeypot_simulation": true,
+      "liquidity": true,
+      "source_verification": true,
+      "creation": true,
+      "holder_balances": true,
+      "lp_burn": false
+    },
+    "block_number": 52950315,
+    "elapsed_ms": 812,
+    "rpc_calls": 17,
+    "sources": [
+      "public JSON-RPC (Base)",
+      "Multicall3",
+      "eth_simulateV1 / eth_call state-override trade simulation",
+      "Chainlink price feed",
+      "Sourcify"
+    ],
+    "notice": "Informational only, not financial advice. Automated on-chain heuristics and a simulated trade; they can miss risks and can flag safe tokens."
+  },
+  "payment": null
+}
