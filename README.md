@@ -1,5 +1,7 @@
 # agentkit-devx-tokencheck
 
+[![npm](https://img.shields.io/npm/v/agentkit-devx-tokencheck)](https://www.npmjs.com/package/agentkit-devx-tokencheck) [![license](https://img.shields.io/npm/l/agentkit-devx-tokencheck)](LICENSE)
+
 A [Coinbase AgentKit](https://github.com/coinbase/agentkit) action provider (TypeScript and Python) that checks a token for rug-pull or honeypot risk **before your agent swaps into it**. It uses [DevX Token Check](https://tokencheck.madebydevx.com).
 
 | Action | What it does |
@@ -40,14 +42,11 @@ Known gaps:
 
 ## TypeScript
 
-The package is not on npm yet. Install it from this repo:
-
 ```bash
-pnpm add "github:devx-agent/agentkit-devx-tokencheck#path:/typescript"   # pnpm >= 9
-# or with npm:
-git clone https://github.com/devx-agent/agentkit-devx-tokencheck && (cd agentkit-devx-tokencheck/typescript && npm install)
-npm install ./agentkit-devx-tokencheck/typescript
+npm install agentkit-devx-tokencheck @coinbase/agentkit
 ```
+
+npm: https://www.npmjs.com/package/agentkit-devx-tokencheck. The Python package is not on PyPI; install it from this repo (see below).
 
 ```ts
 import { AgentKit, CdpEvmWalletProvider, erc20ActionProvider } from "@coinbase/agentkit";

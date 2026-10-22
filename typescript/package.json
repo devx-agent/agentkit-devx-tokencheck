@@ -27,7 +27,8 @@
     "base",
     "defi",
     "trading",
-    "agent"
+    "agent",
+    "token-risk"
   ],
   "author": "Made by DevX <madebydevx@gmail.com> (https://madebydevx.com)",
   "license": "MIT",
