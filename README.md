@@ -40,6 +40,29 @@ Known gaps:
 - **Spend safety in this client:** it signs only if the 402 asks for Base USDC, payable to the DevX address `0xe30c4544eC57ac44d8586eB49e49e267fc2d40DB`, at or below your cap (default $0.01). Any other request is refused without signing.
 - The payment goes to Made by DevX, the operator of the service. This package is the client for a paid API we run.
 
+### Other ways to pay (Token Check server 1.2.0, Oct 23 2026)
+
+This package is one client. The service itself (`https://tokencheck.madebydevx.com/v1/token/verdict`) also accepts:
+
+- **Any stock x402 client, v2 or v1.** The 402 carries an x402 **v2** `PAYMENT-REQUIRED` header (`eip155:8453`) and an x402 **v1** body (`network: "base"`, `maxAmountRequired: "10000"`). So v2 clients (`@x402/fetch`, `@x402/axios`, Python `x402` 2.x) and v1 clients (`x402-fetch` / `x402-axios` 1.x, the `x402<2` stack pinned by `coinbase-agentkit` Python) can both pay without custom code. Retry with `PAYMENT-SIGNATURE` (v2) or `X-PAYMENT` (v1); v1 payments also get `X-PAYMENT-RESPONSE`. In our Oct 23 tests each of these clients reached payment verification against production, and `@x402/fetch`, `x402-fetch` 1.x and the browser button below completed real $0.01 self-test payments.
+- **One click in a browser.** On [tokencheck.madebydevx.com](https://tokencheck.madebydevx.com), the "Pay $0.01 and check" button uses your browser wallet (`window.ethereum`, e.g. Coinbase Wallet or MetaMask). It switches to Base, shows the exact amount and recipient, and asks you to sign one EIP-3009 USDC authorization. It is gasless for you, settled only when the check succeeds, and it never asks for a key or password.
+- **Free teaser.** `GET /v1/token/free?chain=base&address=0x...` gives 10 checks per UTC day per IP (any token): verdict, grade, risk score, flags and the top 3 reasons, with a list of what the paid report adds. After the quota it returns the normal 402, and an x402 client pays $0.01 and retries automatically.
+- **Machine-readable follow-up.** Every 402 and free response has `offer` (price, payee, what paid adds), `next_steps[]` and copy-paste `snippets` per client. Docs: [llms.txt](https://tokencheck.madebydevx.com/llms.txt), [openapi.json](https://tokencheck.madebydevx.com/openapi.json).
+
+Minimal stock-client example (no plugin):
+
+```ts
+import { wrapFetchWithPayment, x402Client } from "@x402/fetch";
+import { registerExactEvmScheme } from "@x402/evm/exact/client";
+import { privateKeyToAccount } from "viem/accounts";
+
+const client = new x402Client();
+registerExactEvmScheme(client, { signer: privateKeyToAccount(process.env.EVM_PRIVATE_KEY as `0x${string}`) });
+const pay = wrapFetchWithPayment(fetch, client);
+const r = await pay("https://tokencheck.madebydevx.com/v1/token/verdict?chain=base&address=0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed");
+console.log((await r.json()).result.verdict);
+```
+
 ## TypeScript
 
 ```bash
@@ -99,7 +122,7 @@ agentkit = AgentKit(AgentKitConfig(
 ))
 ```
 
-`coinbase-agentkit` pins the v1-only `x402` package. This provider therefore builds the x402 **v2** payment itself: an EIP-3009 typed-data signature via `wallet_provider.sign_typed_data`. A test checks that signature against viem byte for byte.
+`coinbase-agentkit` pins the v1-only `x402` package. This provider therefore builds the x402 **v2** payment itself: an EIP-3009 typed-data signature via `wallet_provider.sign_typed_data`. A test checks that signature against viem byte for byte. Since Token Check 1.2.0 the server also accepts x402 v1, so AgentKit's own `x402<2` HTTP client can pay it as well; this provider keeps its v2 path, which works with every server version.
 
 ## Tests
 
