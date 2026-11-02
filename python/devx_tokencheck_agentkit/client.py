@@ -19,7 +19,7 @@ from typing import Any
 import requests
 
 DEFAULT_BASE_URL = "https://tokencheck.madebydevx.com"
-DEVX_PAY_TO = "0xe30c4544eC57ac44d8586eB49e49e267fc2d40DB"
+DEVX_PAY_TO = "0xB3cDDccEe6B150c8efFD55B961afc0Ecefe7f247"
 BASE_USDC = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
 BASE_NETWORK = "eip155:8453"
 DEFAULT_MAX_PRICE_ATOMIC = 10_000

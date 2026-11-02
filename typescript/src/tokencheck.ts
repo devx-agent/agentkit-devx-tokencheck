@@ -15,7 +15,7 @@ import { privateKeyToAccount } from "viem/accounts";
 
 export const DEFAULT_BASE_URL = "https://tokencheck.madebydevx.com";
 /** DevX payee (Made by DevX main wallet). Payments to any other address are refused. */
-export const DEVX_PAY_TO = "0xe30c4544eC57ac44d8586eB49e49e267fc2d40DB";
+export const DEVX_PAY_TO = "0xB3cDDccEe6B150c8efFD55B961afc0Ecefe7f247";
 export const BASE_USDC = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913";
 export const BASE_NETWORK = "eip155:8453";
 export const DEFAULT_MAX_PRICE_ATOMIC = 10_000n; // 0.01 USDC (6 decimals)

@@ -11,7 +11,7 @@ import { fakeServer, decode } from "./helpers";
 
 const DEGEN = "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed";
 const RANDOM = "0x1111111111111111111111111111111111111111";
-const PAYTO = "0xe30c4544eC57ac44d8586eB49e49e267fc2d40DB";
+const PAYTO = "0xB3cDDccEe6B150c8efFD55B961afc0Ecefe7f247";
 
 const wallet = (chain = base) =>
   new ViemWalletProvider(createWalletClient({ account: privateKeyToAccount(generatePrivateKey()), chain, transport: http("http://127.0.0.1:1") }));

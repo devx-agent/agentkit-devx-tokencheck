@@ -37,7 +37,7 @@ Known gaps:
 - **$0.01 USDC per check**, paid on **Base** with the [x402](https://x402.org) protocol (v2, `exact` scheme). The agent's own wallet signs a USDC `transferWithAuthorization`, so it needs a little USDC on Base. It does not need ETH; the facilitator pays gas.
 - **Free demo:** Base USDC, WETH, DEGEN and AERO go to `/v1/token/demo` at no cost, even when a wallet is configured.
 - **Failed checks are not charged.** The service returns 400/422/502 before settling for bad input, non-tokens or RPC failure.
-- **Spend safety in this client:** it signs only if the 402 asks for Base USDC, payable to the DevX address `0xe30c4544eC57ac44d8586eB49e49e267fc2d40DB`, at or below your cap (default $0.01). Any other request is refused without signing.
+- **Spend safety in this client:** it signs only if the 402 asks for Base USDC, payable to the DevX address `0xB3cDDccEe6B150c8efFD55B961afc0Ecefe7f247`, at or below your cap (default $0.01). Any other request is refused without signing.
 - The payment goes to Made by DevX, the operator of the service. This package is the client for a paid API we run.
 
 ### Other ways to pay (Token Check server 1.2.0, Oct 23 2026)
